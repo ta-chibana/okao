@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    okao (0.1.1)
+    okao (0.1.0)
       thor (~> 0.19.1)
 
 GEM
