@@ -7,7 +7,7 @@ module Okao
           points = cur.codepoints.map { |c| c.to_s(8).to_i }
           okaos = points.map do |point|
             face_list = format('%06d', point.to_s).split('').map do |i|
-              Okao::Face.send("face#{i}")
+              Okao::Emoticon.send("face#{i}")
             end
 
             face_list.join
@@ -18,7 +18,7 @@ module Okao
       end
 
       def to_text(okao_line)
-        okao_hash = Okao::Face.to_h.invert
+        okao_hash = Okao::Emoticon.to_h.invert
         numbers = okao_line.gsub(/\(.*?\)/) do |m|
           var_name = okao_hash[m]
           var_name.slice(/\d/)
