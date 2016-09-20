@@ -43,7 +43,7 @@ module Okao
 
     no_commands do
       def okao_init
-        Okao::Face.init(okaos)
+        Okao::Emoticon.init(okaos)
       end
 
       def okaos
