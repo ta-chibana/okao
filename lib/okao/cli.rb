@@ -8,7 +8,7 @@ module Okao
     desc 'to_okao [text][--file_path file_path]', 'Convert normal text to okao text'
     option :file_path
     def to_okao(text = nil)
-      okao_init
+      init_emoticon
       normal_text = load_file(options[:file_path])
       normal_text ||= text
 
@@ -19,7 +19,7 @@ module Okao
     desc 'to_text [okao][--file_path file_path]', 'Convert okao text to normal text'
     option :file_path
     def to_text(okao = nil)
-      okao_init
+      init_emoticon
       okao_text = load_file(options[:file_path])
       okao_text ||= okao
 
@@ -30,7 +30,7 @@ module Okao
     desc 'exec [okao][--file_path file_path]', 'Execute okao script'
     option :file_path
     def exec(okao = nil)
-      okao_init
+      init_emoticon
       okao_text = load_file(options[:file_path])
       okao_text ||= okao
 
@@ -42,7 +42,7 @@ module Okao
     end
 
     no_commands do
-      def okao_init
+      def init_emoticon
         Okao::Emoticon.init(okaos)
       end
 
