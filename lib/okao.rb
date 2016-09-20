@@ -1,5 +1,5 @@
 require 'okao/cli'
-require 'okao/face'
+require 'okao/emoticon'
 require 'okao/parser'
 require 'okao/version'
 
