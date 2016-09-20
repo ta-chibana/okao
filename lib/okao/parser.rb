@@ -24,11 +24,11 @@ module Okao
           var_name.slice(/\d/)
         end
         
-        plane_text = numbers.gsub(/\d{6}/) do |n|
+        normal_text = numbers.gsub(/\d{6}/) do |n|
           n.to_i(8).chr('UTF-8')
         end
 
-        "#{plane_text}\n"
+        "#{normal_text}\n"
       end
     end
   end
