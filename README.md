@@ -22,7 +22,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### normal text to okao text
+
+```
+$ okao to_okao 'hi!'
+(^-^)(^-^)(^-^)(´O`)(´･ω･`)(^-^)(^-^)(^-^)(^-^)(´O`)(´･ω･`)(´O`)(^-^)(^-^)(^-^)(^-^)(｡-_-｡)(´O`)
+```
+
+### okao text to normal text
+
+```
+$ okao to_text '(^-^)(^-^)(^-^)(´O`)(´･ω･`)(^-^)(^-^)(^-^)(^-^)(´O`)(´･ω･`)(´O`)(^-^)(^-^)(^-^)(^-^)(｡-_-｡)(´O`)'
+hi!
+```
+
+### execute
+
+If the result of `to_text` command is Ruby script, can be run it.
+
+```
+$ okao to_okao 'puts 1 + 1'
+(^-^)(^-^)(^-^)(´O`)(-_-;)(^-^)(^-^)(^-^)(^-^)(´O`)(-_-;)(´･ω･`)(^-^)...
+
+$ okao to_text '(^-^)(^-^)(^-^)(´O`)(-_-;)(^-^)(^-^)(^-^)(^-^)(´O`)(-_-;)(´･ω･`)(^-^)...'
+2
+```
+
+### option
+
+You can use `--file_path` option in all of okao command.
+
+```
+$ okao to_okao 'puts "result: #{(1..5).reduce(:+)}"' > sample.ok
+$ okao exec --file_path sample.ok
+result: 15
+```
 
 ## Development
 
@@ -38,4 +72,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
